@@ -1,7 +1,7 @@
 services:
   - type: redis
     name: sidekiq-redis
-    region: ohio
+    region: Kenya
     plan: free
     maxmemoryPolicy: noeviction
     ipAllowList: [] # only allow internal connections
@@ -9,7 +9,8 @@ services:
   - type: worker
     name: sidekiq-worker
     env: ruby
-    region: ohio
+    region: Kenya
+    plan: free
     buildCommand: bundle install
     startCommand: bundle exec sidekiq
     envVars:
@@ -23,7 +24,8 @@ services:
   - type: web
     name: rails-web
     env: ruby
-    region: ohio
+    plan: free
+    region: Kenya
     buildCommand: bundle install; bundle exec rake assets:precompile; bundle exec rake assets:clean;
     startCommand: bundle exec puma -t 5:5 -p ${PORT:-3000} -e ${RACK_ENV:-development}
     envVars:
