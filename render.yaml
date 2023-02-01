@@ -18,5 +18,4 @@ services:
   - type: redis
     name: redis
     plan: free
-   maxmemory: noevection
-        sync: false
+    sync: false
