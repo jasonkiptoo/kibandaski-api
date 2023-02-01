@@ -14,7 +14,10 @@ services:
         fromDatabase:
           name: app_name
           property: connectionString
-      - key: RAILS_MASTER_KEY
-        plan: free
-        maxmemory: noevection
+  - key: RAILS_MASTER_KEY
+  - type: redis
+    name: redis
+ipAllowList: []
+   plan: free
+   maxmemory: noevection
         sync: false
