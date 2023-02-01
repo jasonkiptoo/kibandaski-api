@@ -2,6 +2,7 @@ services:
   - type: redis
     name: sidekiq-redis
     region: ohio
+    plan: free
     maxmemoryPolicy: noeviction
     ipAllowList: [] # only allow internal connections
 
