@@ -1,16 +1,16 @@
 services:
   - type: redis
-    name: sidekiq-redis
-    region: ohio
+    name: redis
+    region: kenya
     maxmemoryPolicy: noeviction
     ipAllowList: [] # only allow internal connections
 
   - type: worker
-    name: sidekiq-worker
+    name: worker
     env: ruby
     region: ohio
-    buildCommand: bundle install
-    startCommand: bundle exec sidekiq
+    buildCommand: "./bin/render-build.sh"
+    startCommand: bundle exec rails s
     envVars:
       - key: REDIS_URL
         fromService:
