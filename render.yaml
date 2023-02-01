@@ -1,5 +1,5 @@
 database:
- -name: postgress
+ -name: postgres
  ipAllowList: []
 
 
@@ -15,7 +15,7 @@ database:
   sync: false
   -key: DATABASE_URL
   fromDatabase:
-  name: postgress
+  name: postgres
   property: connectionString
 
   -type: redis
