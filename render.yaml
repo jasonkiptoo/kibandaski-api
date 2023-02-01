@@ -1,11 +1,11 @@
 databases:
-  - name: app_name
+  - name: postgres
     databaseName: app_name
     user: app_name
 
 services:
   - type: web
-    name: app_name
+    name: rails
     env: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
@@ -15,4 +15,6 @@ services:
           name: app_name
           property: connectionString
       - key: RAILS_MASTER_KEY
+        plan: free
+        maxmemory: noevection
         sync: false
