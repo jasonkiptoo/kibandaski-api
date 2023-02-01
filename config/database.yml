@@ -82,7 +82,7 @@ test:
 #
 production:
   <<: *default
-  # database: book_a_meal_production
-  # username: book_a_meal
-  # password: <%= ENV["BOOK_A_MEAL_DATABASE_PASSWORD"] %>
+  database: book_a_meal_production
+  username: book_a_meal
+  password: <%= ENV["BOOK_A_MEAL_DATABASE_PASSWORD"] %>
   url: <%= ENV['DATABASE_URL'] %>
