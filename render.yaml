@@ -15,7 +15,6 @@ services:
           name: app_name
           property: connectionString
   - key: RAILS_MASTER_KEY
-  - type: redis
-    name: redis
-    plan: free
-    sync: false
+   name: redis
+   plan: free
+   sync: false
